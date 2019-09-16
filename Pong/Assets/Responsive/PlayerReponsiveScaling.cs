@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerBoundaryScaling : MonoBehaviour {
+public class PlayerReponsiveScaling : MonoBehaviour {
+
+    public double scale = 1.46;
 
 	// Use this for initialization
 	void Start ()
     {
         var width = Camera.main.orthographicSize * 2.0 * Screen.width / Screen.height;
-        var scale = transform.localPosition.x > 0 ? 1.46 : -1.46;
 
         var x = (float)(width / scale);
         var y = transform.localPosition.y;
