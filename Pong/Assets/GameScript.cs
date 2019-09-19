@@ -5,12 +5,15 @@ using UnityEngine;
 public class GameScript : MonoBehaviour {
 
     public GameObject HUD;
-    private HUDManager hudManager; 
+    public GameObject Ball;
+    private HUDManager hudManager;
+    private BallControls ballControls;
 
 	// Use this for initialization
 	void Start ()
     {
         hudManager = HUD.GetComponent<HUDManager>();
+        ballControls = Ball.GetComponent<BallControls>();
 	}
 	
 	// Update is called once per frame
@@ -22,8 +25,11 @@ public class GameScript : MonoBehaviour {
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log(this.ToString());
+        Debug.Log(ballControls);
 
         hudManager.score++;
         hudManager.playerScored = true;
+
+        ballControls.RestartGame();
     }
 }

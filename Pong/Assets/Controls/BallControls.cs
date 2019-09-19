@@ -5,11 +5,13 @@ using UnityEngine;
 public class BallControls : MonoBehaviour {
 
     private Rigidbody rb;
+    private Vector3 startPosition;
 
 	// Use this for initialization
 	void Start ()
-    {
+    { 
         rb = GetComponent<Rigidbody>();
+        startPosition = transform.position;
         Invoke("GoBall", 2);
 	}
 	
@@ -35,10 +37,10 @@ public class BallControls : MonoBehaviour {
     void ResetBall()
     {
         rb.velocity = Vector3.zero;
-        transform.position = Vector3.zero;
+        transform.position = startPosition;
     }
 
-    void RestartGame()
+    public void RestartGame()
     {
         ResetBall();
         Invoke("GoBall", 1);
