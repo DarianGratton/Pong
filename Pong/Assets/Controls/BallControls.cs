@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BallControls : MonoBehaviour {
 
+    public float thrust = 0.5f;
     private Rigidbody rb;
     private Vector3 startPosition;
 
@@ -34,7 +35,7 @@ public class BallControls : MonoBehaviour {
         }
     }
 
-    void ResetBall()
+    public void ResetBall()
     {
         rb.velocity = Vector3.zero;
         transform.position = startPosition;
@@ -44,5 +45,13 @@ public class BallControls : MonoBehaviour {
     {
         ResetBall();
         Invoke("GoBall", 1);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.CompareTag("Player"))
+        {
+            
+        }
     }
 }

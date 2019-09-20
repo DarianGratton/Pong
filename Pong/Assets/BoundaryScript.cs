@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameScript : MonoBehaviour {
+public class BoundaryScript : MonoBehaviour {
 
     public GameObject HUD;
     public GameObject Ball;
@@ -24,12 +24,12 @@ public class GameScript : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(this.ToString());
-        Debug.Log(ballControls);
-
         hudManager.score++;
         hudManager.playerScored = true;
 
-        ballControls.RestartGame();
+        if (hudManager.score > hudManager.maxScore)
+            ballControls.ResetBall();
+        else
+            ballControls.RestartGame();
     }
 }
