@@ -15,18 +15,28 @@ Platform assembly: C:\Users\Skull\Work\unity\Pong\Pong\Pong_Data\Managed\UnityEn
 Loading C:\Users\Skull\Work\unity\Pong\Pong\Pong_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: C:\Users\Skull\Work\unity\Pong\Pong\Pong_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading C:\Users\Skull\Work\unity\Pong\Pong\Pong_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.099 seconds
+- Completed reload, in  0.095 seconds
 Platform assembly: C:\Users\Skull\Work\unity\Pong\Pong\Pong_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\Skull\Work\unity\Pong\Pong\Pong_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 3.684800 ms
+UnloadTime: 0.864600 ms
 Setting up 6 worker threads for Enlighten.
-  Thread -> id: 15c0 -> priority: 1 
-  Thread -> id: 4584 -> priority: 1 
-  Thread -> id: 4cf0 -> priority: 1 
-  Thread -> id: 4cfc -> priority: 1 
-  Thread -> id: 41dc -> priority: 1 
-  Thread -> id: 3698 -> priority: 1 
+  Thread -> id: 2910 -> priority: 1 
+  Thread -> id: 3410 -> priority: 1 
+  Thread -> id: 4264 -> priority: 1 
+  Thread -> id: 2770 -> priority: 1 
+  Thread -> id: 2988 -> priority: 1 
+  Thread -> id: 3e0c -> priority: 1 
+Game
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 3.796700 ms
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 319.
+Total: 0.157200 ms (FindLiveObjects: 0.014600 ms CreateObjectMapping: 0.010400 ms MarkObjects: 0.122200 ms  DeleteObjects: 0.009400 ms)
+
