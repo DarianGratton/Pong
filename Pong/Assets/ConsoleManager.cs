@@ -7,15 +7,16 @@ public class ConsoleManager : MonoBehaviour {
 
     private Canvas console;
     private Camera camera;
+    private GameObject ball;
 
 	// Use this for initialization
 	void Start ()
     {
         var input = GameObject.Find("ConsoleField").GetComponent<InputField>();
-        var se = new InputField.SubmitEvent();
         input.onEndEdit.AddListener(SubmitCommand);
 
         camera = GameObject.Find("Main Camera").GetComponent<Camera>();
+        ball = GameObject.Find("Ball");
         console = GameObject.Find("Console").GetComponent<Canvas>();
 
         CloseTheConsole();
@@ -37,28 +38,40 @@ public class ConsoleManager : MonoBehaviour {
 
     public void SubmitCommand(string command)
     {
+        // Change color of background
         switch (command.ToLower())
         {
-            case "red":
+            case "background=red":
                 camera.backgroundColor = Color.red;
                 break;
-            case "blue":
+            case "background=blue":
                 camera.backgroundColor = Color.blue;
                 break;
-            case "cyan":
+            case "background=cyan":
                 camera.backgroundColor = Color.cyan;
                 break;
-            case "gray":
+            case "background=gray":
                 camera.backgroundColor = Color.gray;
                 break;
-            case "green":
+            case "background=green":
                 camera.backgroundColor = Color.green;
                 break;
-            case "magenta":
+            case "background=magenta":
                 camera.backgroundColor = Color.magenta;
                 break;
-            case "yellow":
+            case "background=yellow":
                 camera.backgroundColor = Color.yellow;
+                break;
+        }
+
+        // Change ball size
+        switch (command.ToLower())
+        {
+            case "ball=big":
+                ball.transform.localScale = new Vector3(2, 2, 2);
+                break;
+            case "ball=small":
+                ball.transform.localScale = new Vector3((float) 0.25, (float) 0.25, (float) 0.25);
                 break;
         }
     }
