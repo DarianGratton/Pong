@@ -11,7 +11,7 @@ public class ConsoleManager : MonoBehaviour {
     {
         console = GameObject.Find("Console").GetComponent<Canvas>();
 
-        console.enabled = false;
+        CloseTheConsole();
 	}
 	
 	// Update is called once per frame
@@ -22,4 +22,9 @@ public class ConsoleManager : MonoBehaviour {
             console.enabled = true;
         }
 	}
+
+    public void CloseTheConsole()
+    {
+        console.enabled = false;
+    }
 }
