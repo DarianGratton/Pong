@@ -50,4 +50,16 @@ public class BallControls : MonoBehaviour {
         ResetBall();
         Invoke("GoBall", 1);
     }
+
+    void OnCollisionEnter2D(Collision2D coll)
+    {
+        if (coll.collider.CompareTag("Player"))
+        {
+            Vector3 vel;
+            vel.x = rb.velocity.x;
+            vel.y = (rb.velocity.y / 2) + (coll.collider.attachedRigidbody.velocity.y / 3);
+            vel.z = rb.velocity.z;
+            rb.velocity = vel;
+        }
+    }
 }

@@ -6,6 +6,7 @@ public class PlayerControls : MonoBehaviour {
 
 	public KeyCode moveUp = KeyCode.W;
     public KeyCode moveDown = KeyCode.S;
+    public string input = "Vertical";
     private GameObject topBound;
     private GameObject bottomBound;
     
@@ -20,7 +21,7 @@ public class PlayerControls : MonoBehaviour {
 	void Update ()
     {
         // When player pushesup check if below top boundary and move up paddle if true
-        if (Input.GetKey(moveUp)
+        if ((Input.GetKey(moveUp) || (Input.GetAxis(input) == 1))
             && (topBound.transform.position.y - 2) > transform.position.y)
         {
             Vector3 position = this.transform.position;
@@ -29,7 +30,7 @@ public class PlayerControls : MonoBehaviour {
         }
 
         // When player pushesup check if above bottom boundary and move down paddle if true
-        if (Input.GetKey(moveDown)
+        if ((Input.GetKey(moveDown) || (Input.GetAxis(input) == -1))
              && (bottomBound.transform.position.y + 2) < transform.position.y)
         {
             Vector3 position = this.transform.position;
