@@ -7,6 +7,7 @@ public class BallControls : MonoBehaviour {
     public float thrust = 0.5f;
     private Rigidbody rb;
     private Vector3 startPosition;
+    private Vector3 currentVelocity;
 
 	// Use this for initialization
 	void Start ()
@@ -47,11 +48,16 @@ public class BallControls : MonoBehaviour {
         Invoke("GoBall", 1);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void StopBall()
     {
-        if (collision.collider.CompareTag("Player"))
-        {
-            
-        }
+        currentVelocity = rb.velocity;
+        Debug.Log(currentVelocity);
+        rb.velocity = Vector3.zero;
+    }
+
+    public void ResumeBall()
+    {
+        Debug.Log(currentVelocity);
+        rb.AddForce(currentVelocity.x, currentVelocity.y, currentVelocity.z);
     }
 }

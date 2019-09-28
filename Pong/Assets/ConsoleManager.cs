@@ -8,9 +8,10 @@ public class ConsoleManager : MonoBehaviour {
     private Canvas console;
     private Camera camera;
     private GameObject ball;
+    private BallControls ballControls;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
     {
         var input = GameObject.Find("ConsoleField").GetComponent<InputField>();
         input.onEndEdit.AddListener(SubmitCommand);
@@ -18,9 +19,10 @@ public class ConsoleManager : MonoBehaviour {
         camera = GameObject.Find("Main Camera").GetComponent<Camera>();
         ball = GameObject.Find("Ball");
         console = GameObject.Find("Console").GetComponent<Canvas>();
+        ballControls = ball.GetComponent<BallControls>();
 
-        CloseTheConsole();
-	}
+        console.enabled = false;
+    }
 	
 	// Update is called once per frame
 	void Update ()
