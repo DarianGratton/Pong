@@ -2,14 +2,14 @@
 ## Controls
 Player 1
 ```
-Move Up: w
-Move Down: s
+Move Up: w / Up on JoyStick 1
+Move Down: s / Up on JoyStick 1
 ```
 
 Player 2
 ```
-Move Up: UpArrow
-Move Down: DownArrow
+Move Up: UpArrow / Up on JoyStick 2
+Move Down: DownArrow / Up on JoyStick 2
 ```
 
 ## Console Commands
