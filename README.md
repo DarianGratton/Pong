@@ -1,6 +1,4 @@
 # Pong - COMP7051 Assignment 1
-Beginner Unity3D project
-
 ## Controls
 Player 1
 ```
