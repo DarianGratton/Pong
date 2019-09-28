@@ -9,6 +9,7 @@ public class PlayerReponsiveScaling : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
+        // Gets width of camera view and changes the side player boundarys based on size of camera
         var width = Camera.main.orthographicSize * 2.0 * Screen.width / Screen.height;
 
         var x = (float)(width / scale);

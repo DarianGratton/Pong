@@ -7,41 +7,36 @@ public class HUDManager : MonoBehaviour {
 
     Text HUDText;
     public int score = 0;
-    public int maxScore = 1;
-    public bool playerScored = true;
+    public int maxScore = 10;            
+    public bool playerScored = true;    
     private Text winnerText;
-    private string oriString;
-    private GameObject quitButton;
+    private string oriString;           // String to keep track of the original text before score is added
     
     // Use this for initialization
 	void Start ()
     {
         winnerText = GameObject.Find("WinnerText").GetComponent<Text>();
-        quitButton = GameObject.Find("QuitButton");
         HUDText = GetComponent<Text>();
         oriString = HUDText.text.ToString();
 
         winnerText.enabled = false;
-        if (quitButton)
-        {
-            quitButton.SetActive(false); 
-        }
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
+        // Check if player scored and adds score to player text that scored
         if (playerScored)
         {
             HUDText.text = oriString + ": "+ score.ToString();
             playerScored = !playerScored;
         }
 
+        // Check if score is greater than the max score and announces winner
         if (score > maxScore)
         {
             winnerText.text = "Winner: " + oriString;
             winnerText.enabled = true;
-            quitButton.SetActive(true);
         }
 	}
 }

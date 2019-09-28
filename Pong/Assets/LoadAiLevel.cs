@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LoadAiLevel : MonoBehaviour {
 
+    // Load Player vs Ai game.
     public void LoadTheLevel(string theLevel)
     {
         PlayerPrefs.SetInt("Ai", 1);

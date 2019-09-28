@@ -19,6 +19,7 @@ public class AiControls : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        // Checks for y position and the top boundary so the Ai doesn't fly through it 
         if (transform.position.y < ball.transform.position.y
             && (topBound.transform.position.y - 2) > transform.position.y)
         {
@@ -26,7 +27,8 @@ public class AiControls : MonoBehaviour {
             position.y = (float)(position.y + 0.05);
             this.transform.position = position;
         }
-        
+
+        // Checks for y position and the bottom boundary so the Ai doesn't fly through it 
         if (transform.position.y > ball.transform.position.y
             && (bottomBound.transform.position.y + 2) < transform.position.y)
         {

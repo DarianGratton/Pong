@@ -23,6 +23,7 @@ public class BallControls : MonoBehaviour {
 		
 	}
 
+    // Adds force to ball
     void GoBall()
     {
         float rand = Random.Range(0, 2);
@@ -36,28 +37,17 @@ public class BallControls : MonoBehaviour {
         }
     }
 
+    // Resets ball's position to the start of the stage
     public void ResetBall()
     {
         rb.velocity = Vector3.zero;
         transform.position = startPosition;
     }
 
+    // Restarts game by reseting ball's position and then adding force to the ball
     public void RestartGame()
     {
         ResetBall();
         Invoke("GoBall", 1);
-    }
-
-    public void StopBall()
-    {
-        currentVelocity = rb.velocity;
-        Debug.Log(currentVelocity);
-        rb.velocity = Vector3.zero;
-    }
-
-    public void ResumeBall()
-    {
-        Debug.Log(currentVelocity);
-        rb.AddForce(currentVelocity.x, currentVelocity.y, currentVelocity.z);
     }
 }

@@ -7,6 +7,7 @@ public class BoundaryScaling : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
+        // Gets width of camera view and changes the top and bottom boundarys based on size of camera
         var width = Camera.main.orthographicSize * 2.0 * Screen.width / Screen.height;
         var scale = 1.4;
 
